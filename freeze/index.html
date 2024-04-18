@@ -2,8 +2,8 @@
 <html>
 <head>
 <title>Ryan Carrido</title>
-<link rel="icon" href="assets/logo3.png">
-<link rel="stylesheet" href="style.css">
+<link rel="icon" href="../assets/logo3.png">
+<link rel="stylesheet" href="../style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
@@ -13,14 +13,14 @@
 <body>
     <nav class="navbar fixed-top navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container-fluid">
-            <img src="assets/logo2.png" alt="Logo" width="30" height="36">
+            <img src="../assets/logo2.png" alt="Logo" width="30" height="36">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="../index.html#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../index.html#About">About</a>
@@ -49,9 +49,9 @@
           </div>
         </div>
       </nav>
-      <div class="mw-100 text-white" style="background-image: url(assets/bg2.jpg);">
+      <div class="mw-100 text-white" style="background-image: url(../assets/bg2.jpg);">
         <div class="container text-center">
-            <div style="padding-bottom:300px;padding-top:300px;font-size: 60px;text-align: center;font-family: 'Space Mono', monospace;text-shadow: 3px 3px 5px #212529"><img src="assets/logo5.png" width="60px"alt="Photo">RYAN CARRIDO</div>
+            <div style="padding-bottom:300px;padding-top:300px;font-size: 60px;text-align: center;font-family: 'Space Mono', monospace;text-shadow: 3px 3px 5px #212529"><img src="../assets/logo5.png" width="60px"alt="Photo">RYAN CARRIDO</div>
             
         </div>
       </div>
@@ -62,15 +62,62 @@
         </div>
       </div>
 
+      <div class="container my-5 py-5" id="About">
+        <h1 class="text-center">
+          HIRING FREEZE
+        </h1>
+        <div class="square " >
+          <div>
+            <img src="https://cdsllc.com/wp-content/uploads/2023/02/150x63.png"
+              alt="Profile Pic" width="20%"style="float:left; margin: 15px;">
+          </div>
+            <div id="announcement" class="h2">Days Since Hiring Freeze Announcement (02/20/24): </div>
+            <div id="bill" class="h2">Days Since Spending Bill Passed (<a href="https://apnews.com/article/government-shutdown-senate-congress-budget-spending-7dfcb8d8682d5dc28c91af3702489d89">03/08/24</a>): </div>
+            
+
+        
+        </div>
+        <script>
+          let announce = new Date("02/20/24");
+          let govBill = new Date("03/08/24");
+          let today = new Date();
+          
+          // Calculating the time difference
+          // of two dates
+          let Difference_In_Time_Announce =
+              today.getTime() - announce.getTime();
+          let Difference_In_Time_Bill =
+              today.getTime() - govBill.getTime();
+          
+          // Calculating the no. of days between
+          // two dates
+          let Difference_In_Days_Announce =
+              Math.round
+                  (Difference_In_Time_Announce / (1000 * 3600 * 24));
+          let Difference_In_Days_Bill =
+              Math.round
+                  (Difference_In_Time_Bill / (1000 * 3600 * 24));
+          
+          // To display the final no. of days (result)
+          document.getElementById("announcement").innerHTML += Difference_In_Days_Announce+" days";
+          document.getElementById("bill").innerHTML += Difference_In_Days_Bill+" days";
+
+          // console.log
+          //     ("Total number of days between dates:\n" +
+          //         date1.toDateString() + " and " +
+          //         date2.toDateString() +
+          //         " is: " + Difference_In_Days + " days");
+        </script>
+      </div>
+
+  </div>
+    
 
 
-
-
-
-      <footer class="text-dark text-center py-3" style="background-image: url(assets/bg.jpg);">
+      <footer class="text-dark text-center py-3" style="background-image: url(../assets/bg.jpg);">
         <div class="container">
-          <a href="https://www.linkedin.com/in/ryan-carrido/" target="_blank"><img src="assets/linkedin.png" alt="Photo" width="3%" style="border-radius: 70%;" class="hvr-grow"></a>
-          <a href="https://github.com/carrir2" target="_blank"><img src="assets/github.png" alt="Photo" width="3%" style="border-radius: 70%;" class="hvr-grow"></a>
+          <a href="https://www.linkedin.com/in/ryan-carrido/" target="_blank"><img src="../assets/linkedin.png" alt="Photo" width="3%" style="border-radius: 70%;" class="hvr-grow"></a>
+          <a href="https://github.com/carrir2" target="_blank"><img src="../assets/github.png" alt="Photo" width="3%" style="border-radius: 70%;" class="hvr-grow"></a>
           Made By Ryan Carrido
         </div>
       </footer>
