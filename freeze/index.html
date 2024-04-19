@@ -69,45 +69,17 @@
         <div class="square " >
           <div>
             <img src="https://cdsllc.com/wp-content/uploads/2023/02/150x63.png"
-              alt="Profile Pic" width="20%"style="float:left; margin: 15px;">
+              alt="Profile Pic" width="24%"style="float:left; margin: 15px;">
           </div>
-            <div id="announcement" class="h2">Days Since Hiring Freeze Announcement (02/20/24): </div>
-            <div id="bill" class="h2">Days Since Spending Bill Passed (<a href="https://apnews.com/article/government-shutdown-senate-congress-budget-spending-7dfcb8d8682d5dc28c91af3702489d89">03/08/24</a>): </div>
+          <h2>Days Since Hiring Freeze Announcement (02/20/24):</h2>
+          <div id="announcement" class="h2">Days Since Hiring Freeze Announcement (02/20/24): </div>
+          <h2>Days Since Spending Bill Passed (<a href="https://apnews.com/article/government-shutdown-senate-congress-budget-spending-7dfcb8d8682d5dc28c91af3702489d89">03/08/24</a>):</h2>
+          <div id="bill" class="h2"></div>
             
 
         
         </div>
-        <script>
-          let announce = new Date("02/20/24");
-          let govBill = new Date("03/08/24");
-          let today = new Date();
-          
-          // Calculating the time difference
-          // of two dates
-          let Difference_In_Time_Announce =
-              today.getTime() - announce.getTime();
-          let Difference_In_Time_Bill =
-              today.getTime() - govBill.getTime();
-          
-          // Calculating the no. of days between
-          // two dates
-          let Difference_In_Days_Announce =
-              Math.round
-                  (Difference_In_Time_Announce / (1000 * 3600 * 24));
-          let Difference_In_Days_Bill =
-              Math.round
-                  (Difference_In_Time_Bill / (1000 * 3600 * 24));
-          
-          // To display the final no. of days (result)
-          document.getElementById("announcement").innerHTML += Difference_In_Days_Announce+" days";
-          document.getElementById("bill").innerHTML += Difference_In_Days_Bill+" days";
-
-          // console.log
-          //     ("Total number of days between dates:\n" +
-          //         date1.toDateString() + " and " +
-          //         date2.toDateString() +
-          //         " is: " + Difference_In_Days + " days");
-        </script>
+       
       </div>
 
   </div>
@@ -122,5 +94,38 @@
         </div>
       </footer>
 
+
+      <script>
+        let announce = new Date("02/20/24");
+        let govBill = new Date("03/08/24");
+
+        var x = setInterval(function(){
+          let today = new Date();
+
+          var distanceA = today.getTime() - announce.getTime(); 
+
+          var daysA = Math.floor(distanceA / (1000 * 60 * 60 * 24));
+          var hoursA = Math.floor((distanceA % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutesA = Math.floor((distanceA % (1000 * 60 * 60)) / (1000 * 60));
+          var secondsA = Math.floor((distanceA % (1000 * 60)) / 1000);
+          document.getElementById("announcement").innerHTML = daysA + "d " + hoursA + "h "
+          + minutesA + "m " + secondsA + "s ";
+
+
+          var distanceB = today.getTime() - govBill.getTime(); 
+
+          var daysB = Math.floor(distanceB / (1000 * 60 * 60 * 24));
+          var hoursB = Math.floor((distanceB % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutesB = Math.floor((distanceB % (1000 * 60 * 60)) / (1000 * 60));
+          var secondsB = Math.floor((distanceB % (1000 * 60)) / 1000);
+          document.getElementById("bill").innerHTML = daysB + "d " + hoursB + "h "
+          + minutesB + "m " + secondsB + "s ";
+
+        }, 1000);
+        
+      
+
+
+      </script>
 </body>
 </html>
